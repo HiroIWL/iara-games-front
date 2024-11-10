@@ -1,0 +1,22 @@
+.loading-container {
+  background-color: #000814;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.logo-container {
+    .logo-img {
+      max-width: 650px;
+      width: 100%;
+      height: auto;
+    }
+  }
+  
+  @media (max-width: 576px) {
+    .logo-container .logo-img {
+      max-width: 366px;
+    }
+  }

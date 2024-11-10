@@ -1,0 +1,64 @@
+<div [formGroup]="formGroup" class="login-container mx-auto animate__animated animate__fadeIn" autocomplete="off">
+  <div class="text-start mb-3">
+    <h3 class="mb-3">Login</h3>
+    <span>Caso não tenha conta, faça o
+      <a class="register-link" (click)="onRegisterClick()">Registro aqui</a>
+    </span>
+  </div>
+
+  <div class="form-group">
+    <label for="email" class="d-none">E-mail</label>
+    <div class="d-flex align-items-center mb-2">
+      <i class="fa-regular fa-envelope"></i><span class="mb-0 ms-2">E-mail</span>
+    </div>
+    <input
+      type="text"
+      placeholder="Entre com seu e-mail"
+      formControlName="email"
+      id="email"
+      class="form-control"
+      [ngClass]="{ 'is-invalid': isFieldInvalid('email') }"
+      autocomplete="off"
+    />
+    <div *ngIf="isFieldInvalid('email')" class="text-danger">
+      Campo obrigatório.
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label for="password" class="d-none">Senha</label>
+    <div class="d-flex align-items-center mb-2">
+      <i class="fa-solid fa-lock"></i><span class="mb-0 ms-2">Senha</span>
+    </div>
+    <input
+      type="password"
+      placeholder="Entre com sua senha"
+      formControlName="password"
+      id="password"
+      class="form-control"
+      [ngClass]="{ 'is-invalid': isFieldInvalid('password') }"
+      autocomplete="off"
+    />
+    <div *ngIf="isFieldInvalid('password')" class="text-danger">
+      Campo obrigatório.
+    </div>
+
+    <div class="d-flex justify-content-between align-items-center mt-3">
+      <div class="form-check">
+        <input
+          class="form-check-input"
+          type="checkbox"
+          id="flexCheckDefault"
+        />
+        <label class="form-check-label" for="flexCheckDefault">
+          Lembrar de mim
+        </label>
+      </div>
+      <a href="#" class="forgot-password">Esqueceu a senha?</a>
+    </div>
+  </div>
+
+  <div class="text-center mt-4">
+    <button type="button" class="btn btn-login" (click)="onSubmit()">Login</button>
+  </div>
+</div>
